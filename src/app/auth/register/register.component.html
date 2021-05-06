@@ -1,0 +1,36 @@
+<!-- template driven  -->
+
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onRegister(registerForm)" #registerForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        name="email"
+        ngModel
+        #emailInput="ngModel"
+        type="email"
+        required email
+        />
+        <mat-error *ngIf="emailInput.invalid">Please enter valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        placeholder="password"
+        type="password"
+        matInput
+        ngModel
+        name="password"
+        #passwordInput="ngModel"
+        required
+      />
+      <!-- ng model get reference to underlining object -->
+    <mat-error *ngIf="passwordInput.invalid">Please enter a password</mat-error>
+    </mat-form-field>
+    <button color="accent" mat-raised-button type="submit">
+      signUp
+    </button>
+  </form>
+</mat-card>
+

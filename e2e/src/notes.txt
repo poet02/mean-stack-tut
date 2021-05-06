@@ -1,0 +1,110 @@
+angular material
+npm i --save @angular/material
+or if using latest
+ng add @angular/material
+
+observables
+
+observer subscribes to an observable
+  -next()
+  -error()
+  -complete()
+its a stream of data that can actively manage with Subject
+  Subject is special observable
+
+
+------------------------------------------------------------------------
+Express
+
+restful api
+  -stateless backend / exposes urls
+  -representational state transfer
+    -server side app
+
+Adding
+in root:
+  -npm install --save express
+
+  //observe server changes
+ - npm install --save-dev nodemon
+
+ //add this package.json
+  -  "start:server": "nodemon server.js"
+
+-- npm run
+
+  ///understanding CORS
+  //disable cors
+    --back & front-ends not same port
+
+
+//getting posts
+  npm i --save body-parser
+
+----------------------------------------------------------------------
+mongoDB
+
+What is it? noSQL db, stores documents/records in a table(sql) and collection/tables(sql)
+
+no data schema or relationships
+
+we can apply relationships
+
+easy to integrate into express
+
+nosql vs sql, why mongo
+
+why not connect client directly to db? insecure
+
+installation:
+  -can download directly from mongo
+  - or free sandbox
+      -new sandbox cluster / serves a mongo db server
+
+  --whitelist ip addresses
+  By selecting the "Free Sandbox" in the previous video,
+   we're using MongoDB Atlas (https://www.mongodb.com/cloud/atlas) in this course - a hosted MongoDB cluster.
+  There, we added our local IP to the "IP Whitelist". One important note on that: If you're away from the project
+  for a couple of days (or maybe even after one day), you might've received a new local IP by your internet provider.
+  Hence you should update that "IP Whitelist" if you're facing any connection issues!
+
+
+  --add package to allow access (mongoose)
+    --npm install --save mongoose
+
+
+--then we need to connect to mongodb cluster
+  -dowload connect to shell
+  -paste url
+
+
+  ------------------------------------------------------------------------------
+  image uploader
+
+
+
+----------------------------auth-----------------------------------------------
+
+creating token
+npm install --save jsonwebtoken
+
+
+
+
+
+
+
+
+
+  ---------------------------------------------------------------------------
+  Angular theory
+
+  chap74
+  own validator - react bit of angular
+
+  template driven - angular infers, e.g FormModule
+  reactive we define every thing e.g  ReactiveFormsModule. This will disable ngModel in Html
+
+  validators chan be async or sync
+
+  extracting file -- expres needs multer package

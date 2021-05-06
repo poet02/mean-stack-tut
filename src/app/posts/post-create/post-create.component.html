@@ -1,0 +1,38 @@
+<!-- <textarea rows="6" [value]="newPost" #postInput></textarea> -->
+<!-- //or use ngModule directice, 2 way binding -->
+<!-- []  are directives-->
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" *ngIf="!isLoading" (submit)="onSavePost()">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        formControlName="title"
+        />
+        <mat-error *ngIf="form.get('title').invalid">Please add post title</mat-error>
+    </mat-form-field>
+    <div>
+      <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+      <input type="file" #filePicker (change)="OnImagePicked($event)"/>
+    </div>
+    <div class="image-preview" *ngIf="imgPreview">
+      <img [src]="imgPreview" [alt]="form.value.title"/>
+    </div>
+    <mat-form-field>
+      <textarea
+        placeholder="leave a comment"
+        matInput
+        rows="6"
+        formControlName="content"
+        >
+    </textarea>
+    <mat-error *ngIf="form.get('content').invalid">Please add post content</mat-error>
+    </mat-form-field>
+    <button color="secondary" mat-raised-button type="submit">
+      Save Post
+    </button>
+  </form>
+</mat-card>
+
+<!-- //event binding in a declarative way -->
